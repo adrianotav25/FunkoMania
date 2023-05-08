@@ -13,9 +13,10 @@ namespace FunkoMania.Domain.Entities
         {
 
         }
-        public Product(string name, string description, bool active, decimal price, DateTime dateRegister, string image, int stockQuantity)
+        public Product(string name,string category, string description, bool active, decimal price, DateTime dateRegister, string image, int stockQuantity)
         {
             Name = name;
+            Category = category;
             Description = description;
             Active = active;
             Price = price;
@@ -25,6 +26,7 @@ namespace FunkoMania.Domain.Entities
         }
 
         public string Name { get; private set; }
+        public string Category { get; private set; }
         public string Description { get; private set; }
         public bool Active { get; private set; }
         public decimal Price { get; private set; }

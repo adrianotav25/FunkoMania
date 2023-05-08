@@ -13,12 +13,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Util\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunkoMania.Domain\FunkoMania.Domain.csproj" />
   </ItemGroup>
 
 </Project>
