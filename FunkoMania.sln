@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunkoMania.Infra.CrossCutti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunkoMania.Application", "FunkoMania.Application\FunkoMania.Application.csproj", "{B9849F76-6F37-47B7-99BF-1C20A7E363A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunkoPop.API", "FunkoPop.API\FunkoPop.API.csproj", "{CC68F078-A198-46D5-9F4D-89FE44D30121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunkoMania.API", "FunkoPop.API\FunkoMania.API.csproj", "{CC68F078-A198-46D5-9F4D-89FE44D30121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

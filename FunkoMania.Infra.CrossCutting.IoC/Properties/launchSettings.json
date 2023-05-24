@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "FunkoMania.Infra.CrossCutting.IoC": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:53812;http://localhost:53815"
+    }
+  }
+}

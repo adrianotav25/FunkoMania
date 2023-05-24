@@ -5,7 +5,7 @@ using FunkoMania.Infra.Data.Repositories;
 using FunkoMania.Infra.Data.UoW;
 using MediatR;
 
-namespace FunkoPop.API.Configuration
+namespace FunkoMania.API.Configuration
 {
     public static class DependencyInjectionConfig
     {

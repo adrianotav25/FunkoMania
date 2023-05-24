@@ -1,6 +1,7 @@
-﻿using System.Runtime.CompilerServices;
+﻿using Microsoft.OpenApi.Models;
+using System.Runtime.CompilerServices;
 
-namespace FunkoPop.API.Configuration
+namespace FunkoMania.API.Configuration
 {
     public static class SwaggerConfig
     {
@@ -10,9 +11,24 @@ namespace FunkoPop.API.Configuration
             {
                 s.SwaggerDoc("v1", new OpenApiInfo()
                 {
-                    Title = "Fu"
-                })
-            })
+                    Title = "FunkoMania API",
+                    Description = "Esta API é feita como parte do trabalho do curso Programador de Sistemas SENAC",
+                    Contact = new OpenApiContact()
+                    {
+                        Name = "Senac",
+                        Email = "contato@go.senac.br"
+                    }
+                });
+            });
+        }
+
+        public static void UseSwaggerConfiguration(this IApplicationBuilder app)
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(s =>
+            {
+                s.SwaggerEndpoint("swagger/v1/swagger.json", "v1")
+            });
         }
     }
 }

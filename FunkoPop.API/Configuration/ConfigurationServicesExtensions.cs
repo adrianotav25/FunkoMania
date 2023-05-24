@@ -1,7 +1,7 @@
 ﻿using FunkoMania.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace FunkoPop.API.Configuration
+namespace FunkoMania.API.Configuration
 {
     public static class ConfigurationServicesExtensions
     {

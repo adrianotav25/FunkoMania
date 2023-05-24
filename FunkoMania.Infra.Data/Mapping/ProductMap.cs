@@ -16,6 +16,7 @@ namespace FunkoMania.Infra.Data.Mapping
         {
             builder.ToTable(TableNames.TbProduct);
             builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
+            builder.Property(p => p.Category).HasMaxLength(10).IsRequired();
             builder.Property(p => p.Description).HasMaxLength(240);
             builder.Property(p => p.Active).HasDefaultValue(true);
             builder.Property(p => p.Price).HasPrecision(10, 2).IsRequired();

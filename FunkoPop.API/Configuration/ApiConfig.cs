@@ -1,6 +1,6 @@
 ﻿using Serilog;
 
-namespace FunkoPop.API.Configuration
+namespace FunkoMania.API.Configuration
 {
     public static class ApiConfig
     {
