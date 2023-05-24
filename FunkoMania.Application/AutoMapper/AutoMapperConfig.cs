@@ -16,8 +16,6 @@ namespace FunkoMania.Application.AutoMapper
                 cfg.AddProfile<DomainToViewModelMappingProfile>();
                 cfg.AddProfile<ViewModelToDomainMappingProfile>();
             });
-
-            //Teste
         }
     }
 }
