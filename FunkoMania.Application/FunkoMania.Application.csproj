@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FunkoMania.Domain.Shared\FunkoMania.Domain.Shared.csproj" />
     <ProjectReference Include="..\FunkoMania.Domain\FunkoMania.Domain.csproj" />
   </ItemGroup>
 

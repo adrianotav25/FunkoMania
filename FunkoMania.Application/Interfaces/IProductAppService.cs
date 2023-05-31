@@ -1,4 +1,5 @@
-﻿using FunkoMania.Domain.Entities;
+﻿using FunkoMania.Application.ViewModel;
+using FunkoMania.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FunkoMania.Application.Interfaces
 {
-    public class IProductAppService
+    public interface IProductAppService
     {
         Task<ProductViewModel> AddAsync(ProductViewModel product);
         ProductViewModel Update(ProductViewModel product);

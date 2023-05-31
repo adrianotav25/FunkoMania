@@ -12,24 +12,34 @@ namespace FunkoMania.Domain.Entities
     {
         public Guid ClientId { get; private set; }
         public decimal TotalValue { get; private set; }
+        public Guid? VoucherId { get; private set; }
+        public bool VoucherUsed { get; private set; }
+        public decimal Discount { get; private set; }
         public string Code { get; private set; }
         public Guid AddressId { get; private set; }
-        public Address Address { get; private set; }
-
         public OrderStatus OrderStatus { get; private set; }
 
         private readonly List<OrderItem> _orderItems;
         public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;
 
+        // EF Rel.
+        public Address Address { get; private set; }
 
-        public Order(Guid clientId, decimal totalValue, string code, Guid addressId, List<OrderItem> orderItems)
+        protected Order() { }
+
+        public Order(Guid clientId,
+            decimal totalValue,
+            List<OrderItem> orderItems,
+            bool voucherUsed,
+            decimal discount = 0,
+            Guid? voucherId = null)
         {
             ClientId = clientId;
             TotalValue = totalValue;
-            Code = code;
-            AddressId = addressId;
             _orderItems = orderItems;
-
+            VoucherId = voucherId;
+            VoucherUsed = voucherUsed;
+            Discount = discount;
         }
 
         public void AuthorizeOrder()
@@ -54,13 +64,39 @@ namespace FunkoMania.Domain.Entities
 
         public void CalculateOrderValue()
         {
-            TotalValue = OrderItems.Sum(p => p.CalculeValue());
+            if (OrderItems == null)
+            {
+                TotalValue = 0;
+            }
+            else
+            {
+                TotalValue = OrderItems.Sum(p => p.CalculeValue());
+            }
+
             
         }
-        
 
         
 
+        public void SetCode()
+        {
+            Code = SetRandomAlphanumeric(4);
+        }
+        private string SetRandomAlphanumeric(int size)
+        {
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            var result = new string(
+                Enumerable.Repeat(chars, size)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
+            return result;
+        }
 
+        public void SetStatus(OrderStatus status)
+        {
+            OrderStatus = status;
+        }
     }
+
 }

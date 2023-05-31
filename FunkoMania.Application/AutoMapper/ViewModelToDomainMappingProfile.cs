@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FunkoMania.Application.ViewModel;
 using FunkoMania.Domain.Entities;
 using System;
 using System.Collections.Generic;

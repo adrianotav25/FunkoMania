@@ -9,7 +9,7 @@ namespace FunkoMania.Application.AutoMapper
 {
     public class AutoMapperConfig
     {
-        public static AutoMapperConfig RegisterMappings()
+        public static MapperConfiguration RegisterMappings()
         {
             return new MapperConfiguration(cfg =>
             {

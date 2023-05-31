@@ -1,4 +1,5 @@
-﻿using FunkoMania.Core.Enums;
+﻿using FunkoMania.Application.ViewModel;
+using FunkoMania.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,4 +1,6 @@
-﻿using FunkoMania.Domain.Interfaces;
+﻿using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.Services;
+using FunkoMania.Domain.Interfaces;
 using FunkoMania.Domain.Shared.Transaction;
 using FunkoMania.Infra.Data.Context;
 using FunkoMania.Infra.Data.Repositories;
@@ -39,7 +41,6 @@ namespace FunkoMania.API.Configuration
         {
             services.AddScoped<IAddressAppService, AddressAppService>();
             services.AddScoped<IProductAppService, ProductAppService>();
-            services.AddScoped<IVoucherAppService, VoucherAppService>();
             services.AddScoped<IOrderAppService, OrderAppService>();
         }
     }

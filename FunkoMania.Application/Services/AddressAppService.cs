@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.ViewModel;
 using FunkoMania.Domain.Entities;
 using FunkoMania.Domain.Interfaces;
+using FunkoMania.Domain.Shared.Transaction;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -60,14 +62,14 @@ namespace FunkoMania.Application.Services
 
         public AddressViewModel GetById(Guid id)
         {
-            var domain = _repository.GetById(id);
+            var domain = _repository.GetbyId(id);
             var viewModel = _mapper.Map<AddressViewModel>(domain);
             return viewModel;
         }
 
         public async Task<AddressViewModel> GetByIdAsync(Guid id)
         {
-            var domain = await _repository.GetByIdAsync(id);
+            var domain = await _repository.GetbyIdAsync(id);
             var viewModel = _mapper.Map<AddressViewModel>(domain);
             return viewModel;
         }

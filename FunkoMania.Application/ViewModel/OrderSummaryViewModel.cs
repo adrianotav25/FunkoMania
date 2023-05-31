@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FunkoMania.Application.ViewModel
 {
-    internal class OrderSummaryViewModel
+    public class OrderSummaryViewModel
     {
     }
 }

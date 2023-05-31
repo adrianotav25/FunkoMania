@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.ViewModel;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FunkoMania.API.Controllers.V1
 {
@@ -6,7 +8,7 @@ namespace FunkoMania.API.Controllers.V1
     [Route("api/v1/address")]
     public class AddressController : Controller
     {
-        private readonly IAddresAppService _addressAppService;
+        private readonly IAddressAppService _addressAppService;
 
         public AddressController(IAddressAppService addressAppService)
         {

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.ViewModel;
 using FunkoMania.Core.Enums;
 using FunkoMania.Domain.Entities;
 using FunkoMania.Domain.Interfaces;
+using FunkoMania.Domain.Shared.Transaction;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,14 +23,14 @@ namespace FunkoMania.Application.Services
         protected readonly IProductRepository _productRepository;
         protected readonly IMapper _mapper;
 
-        public IOrderAppService(IMapper mapper,
+        public OrderAppService(IMapper mapper,
             IUnitOfWork unitOfWork,
             IMediator bus,
             IOrderRepository repository,
             IOrderItemRepository orderItemRepository,
             IAddressRepository addressRepository,
             IClientRepository clientRepository,
-            IProductRepository productRepository,
+            IProductRepository productRepository) : base(unitOfWork, bus)
 
 
         {
@@ -93,7 +95,7 @@ namespace FunkoMania.Application.Services
 
 
             var addressClientId = _clientRepository.GetById(domain.ClientId).AddressId;
-            var addressClient = _addressRepository.GetById(addressClientId);
+            var addressClient = _addressRepository.GetbyId(addressClientId);
             domain.SetAddress(addressClient);
 
             var order = await _orderRepository.AddAsync(domain);

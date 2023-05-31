@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.ViewModel;
 using FunkoMania.Domain.Entities;
 using FunkoMania.Domain.Interfaces;
+using FunkoMania.Domain.Shared.Transaction;
 using MediatR;
 using System;
 using System.Collections.Generic;
