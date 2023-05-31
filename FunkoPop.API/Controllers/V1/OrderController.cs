@@ -1,4 +1,6 @@
-﻿using FunkoMania.Core.Enums;
+﻿using FunkoMania.Application.Interfaces;
+using FunkoMania.Application.ViewModel;
+using FunkoMania.Core.Enums;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FunkoMania.API.Controllers.V1

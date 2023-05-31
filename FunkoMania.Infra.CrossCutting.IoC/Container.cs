@@ -2,11 +2,6 @@
 using FunkoMania.Infra.Data.Repositories;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FunkoMania.Infra.CrossCutting.IoC
 {
@@ -31,8 +26,7 @@ namespace FunkoMania.Infra.CrossCutting.IoC
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderItemRepository, OrderItemRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
-            
+
         }
     }
-}
 }
