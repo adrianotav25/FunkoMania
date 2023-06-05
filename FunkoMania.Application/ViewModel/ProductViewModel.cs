@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FunkoMania.Core.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace FunkoMania.Application.ViewModel
         public Guid Id { get; set; }
         [Required(ErrorMessage = "O campo Nome é obrigatório")]
         public string Name { get; set; }
+        [Required(ErrorMessage = "O campo Descrição é obrigatorio")]
+        public CategoryOptions? Category { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
         [Required(ErrorMessage = "O campo Preço é obrigatório, mesmo que seja zero")]

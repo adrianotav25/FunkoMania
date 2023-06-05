@@ -1,4 +1,5 @@
 ﻿using FunkoMania.Core.DomainObjects;
+using FunkoMania.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,14 @@ namespace FunkoMania.Domain.Entities
         {
 
         }
-        public Product(string name,string category, string description, bool active, decimal price, DateTime dateRegister, string image, int stockQuantity)
+        public Product(string name,
+            CategoryOptions? category,
+            string description,
+            bool active, 
+            decimal price, 
+            DateTime dateRegister,
+            string image,
+            int stockQuantity)
         {
             Name = name;
             Category = category;
@@ -26,7 +34,7 @@ namespace FunkoMania.Domain.Entities
         }
 
         public string Name { get; private set; }
-        public string Category { get; private set; }
+        public CategoryOptions? Category { get; private set; }
         public string Description { get; private set; }
         public bool Active { get; private set; }
         public decimal Price { get; private set; }

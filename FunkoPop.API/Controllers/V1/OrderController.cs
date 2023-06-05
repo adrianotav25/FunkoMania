@@ -38,7 +38,7 @@ namespace FunkoMania.API.Controllers.V1
             return result;
         }
 
-        [HttpPut("addressDelivery/{orderId")]
+        [HttpPut("addressDelivery/{orderId}")]
         public async Task<OrderViewModel> SetAddressDelivery(Guid orderId, [FromBody] AddressViewModel addressViewModel)
         {
             var result = await _orderAppService.SetAddressDelivery(orderId, addressViewModel);

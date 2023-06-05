@@ -23,7 +23,7 @@ namespace FunkoMania.API.Controllers.V1
             return Ok(result);
         }
 
-        [HttpGet("{id")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<AddressViewModel>> Get(Guid id)
         {
             var result = await _addressAppService.GetByIdAsync(id);
