@@ -42,6 +42,7 @@ namespace FunkoMania.API.Configuration
             services.AddScoped<IAddressAppService, AddressAppService>();
             services.AddScoped<IProductAppService, ProductAppService>();
             services.AddScoped<IOrderAppService, OrderAppService>();
+            services.AddScoped<IClientAppService, ClientAppService>();
         }
     }
 }

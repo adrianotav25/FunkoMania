@@ -42,13 +42,13 @@ namespace FunkoMania.Application.Services
             return viewModel;
         }
 
-        public void remove(Guid id)
+        public void Remove(Guid id)
         {
             _repository.Remove(id);
             Commit();
         }
 
-        public void remove(Expression<Func<Client, bool>> expression)
+        public void Remove(Expression<Func<Client, bool>> expression)
         {
             _repository.Remove(expression);
             Commit();
