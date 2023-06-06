@@ -14,8 +14,8 @@ namespace FunkoMania.Application.Interfaces
         Task<ClientViewModel> AddAsync(ClientViewModel viewModel);
         ClientViewModel Update(ClientViewModel viewModel);
         
-        void remove(Guid id);
-        void remove(Expression<Func<Client, bool>> expression);
+        void Remove(Guid id);
+        void Remove(Expression<Func<Client, bool>> expression);
 
         ClientViewModel GetById(Guid id);
         Task<ClientViewModel> GetByIdAsync(Guid id);
