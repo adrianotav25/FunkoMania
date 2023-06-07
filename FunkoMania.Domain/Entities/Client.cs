@@ -24,12 +24,12 @@ namespace FunkoMania.Domain.Entities
 
         }
 
-        public string Name { get; set; }
-        public string Email { get; set; }  
-        public string Cpf { get; set; } 
-        public bool Active { get; set; }
-        public Guid AddressId { get; set; }
-        public Address Address { get; set; }
+        public string Name { get; private set; }
+        public string Email { get; private set; }  
+        public string Cpf { get; private set; } 
+        public bool Active { get; private set; }
+        public Guid AddressId { get; private set; }
+        public Address Address { get; private set; }
 
         public void SetAddress(Address address)
         {

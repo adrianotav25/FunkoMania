@@ -17,15 +17,19 @@ namespace FunkoMania.Application.Services
     public class ClientAppService : BaseService, IClientAppService
     {
         protected readonly IClientRepository _repository;
+        protected readonly IAddressRepository _addressRepository;
+
         protected readonly IMapper _mapper;
 
         public ClientAppService(IClientRepository repository,
             IMapper mapper,
             IUnitOfWork unitOfWork,
-            IMediator bus) : base(unitOfWork, bus)
+            IMediator bus,
+            IAddressRepository addressRepository) : base(unitOfWork, bus)
         {
             _repository = repository;
             _mapper = mapper;
+            _addressRepository = addressRepository;
         }
 
         public ClientViewModel GetById(Guid id)
@@ -81,11 +85,13 @@ namespace FunkoMania.Application.Services
         public async Task<ClientViewModel> AddAsync(ClientViewModel viewModel)
         {
             Client domain = _mapper.Map<Client>(viewModel);
+
             domain = await _repository.AddAsync(domain);
             Commit();
 
             ClientViewModel viewmodelReturn = _mapper.Map<ClientViewModel>(domain);
             return viewmodelReturn;
+
         }
 
         public ClientViewModel Update(ClientViewModel viewModel)
